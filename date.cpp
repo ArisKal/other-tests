@@ -1,12 +1,17 @@
 /*
 * date.cpp
 *
-*  Created on: 7 ��� 2015
+*  Created on: 7 Ìáñ 2015
 *      Author: sheridan
 */
 #include <iostream>
-using namespace std;
 #include "date.h"
+
+using namespace std;
+
+
+
+
 date::date()
 {
 	day = 1;
@@ -14,12 +19,25 @@ date::date()
 	year = 1;
 }
 
-void date::initDate(int d, int m, int y)
+
+
+void date::initDate()
 {
-	if (!setDay(d)) day = 1;
-	if (!setMonth(m)) month = 1;
-	if (!setYear(y)) year = 1;
-}
+	
+	cout << "Δώσε την ημέρα : "; cin >> day ;
+	if ( !setDay(day) ) 
+		day = 1;
+
+	cout << "Δώσε τon μήνα : "; cin >> month ;
+	if ( !setMonth(month) ) 
+		month = 1;
+
+	cout << "Δώσε την χρονιά : "; cin >> year ;
+	if ( !setYear(year) ) 
+		year = 1;
+} 
+
+
 
 bool	date::setDay(int d)
 {
@@ -28,12 +46,16 @@ bool	date::setDay(int d)
 	return true;
 }
 
+
+
 bool	date::setMonth(int m)
 {
 	if (m<0 || m>12) return false;
 	month = m;
 	return true;
 }
+
+
 
 bool	date::setYear(int y)
 {
@@ -42,25 +64,35 @@ bool	date::setYear(int y)
 	return true;
 }
 
+
+
 int		date::getDay()
 {
 	return day;
 }
+
+
 
 int	date::getMonth()
 {
 	return month;
 }
 
+
+
 int	date::getYear()
 {
 	return year;
 }
 
+
+
 void date::printDate()
 {
 	cout << day << "/" << month << "/" << year << endl;
 }
+
+
 
 bool date::isLeap(){
 
@@ -80,6 +112,9 @@ bool date::isLeap(){
 
 
 }
+
+
+
 void date::nextDate(){
 	if (isLeap() == true && month == 2 && day == 28){
 		cout << day + 1 << "/" << month << "/" << year << endl;
@@ -91,6 +126,7 @@ void date::nextDate(){
 	
 	
 }
+
 
 
 date::~date()
