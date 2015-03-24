@@ -95,20 +95,23 @@ void date::printDate()
 
 
 bool date::isLeap(){
+/* By : http://el.wikipedia.org/wiki/%CE%94%CE%AF%CF%83%CE%B5%CE%BA%CF%84%CE%BF_%CE%AD%CF%84%CE%BF%CF%82 */
 
-	if (year%100 == 0){
-		if (year % 400 == 0)
+	if ( year % 4 == 0)
+		{
+		if (year % 100 != 0)
+			return true; /* Είναι δίσεκτο. */
+		else
+			return false;
+		}
+		
+	else 
+		{
+		if (year % 400 == 0) /* Και πάλι είναι δίσεκτο. */
 			return true;
 		else
 			return false;
-	}
-	else
-	{
-		if (year % 4 == 0)
-			return true;
-		else
-			return false;
-	}
+		}
 
 
 }
