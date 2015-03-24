@@ -1,9 +1,3 @@
-/*
-* date.cpp
-*
-*  Created on: 7 ÃŒÃ¡Ã± 2015
-*      Author: sheridan
-*/
 #include <iostream>
 #include "date.h"
 
@@ -23,19 +17,19 @@ date::date()
 
 void date::initDate()
 {
-	
-	cout << "Î”ÏŽÏƒÎµ Ï„Î·Î½ Î·Î¼Î­ÏÎ± : "; cin >> day ;
-	if ( !setDay(day) ) 
+
+	cout << "Äþóå ôçí çìÝñá : "; cin >> day;
+	if (!setDay(day))
 		day = 1;
 
-	cout << "Î”ÏŽÏƒÎµ Ï„on Î¼Î®Î½Î± : "; cin >> month ;
-	if ( !setMonth(month) ) 
+	cout << "Äþóå ôon ìÞíá : "; cin >> month;
+	if (!setMonth(month))
 		month = 1;
 
-	cout << "Î”ÏŽÏƒÎµ Ï„Î·Î½ Ï‡ÏÎ¿Î½Î¹Î¬ : "; cin >> year ;
-	if ( !setYear(year) ) 
+	cout << "Äþóå ôçí ÷ñïíéÜ : "; cin >> year;
+	if (!setYear(year))
 		year = 1;
-} 
+}
 
 
 
@@ -95,23 +89,14 @@ void date::printDate()
 
 
 bool date::isLeap(){
+	/* By : http://el.wikipedia.org/wiki/%CE%94%CE%AF%CF%83%CE%B5%CE%BA%CF%84%CE%BF_%CE%AD%CF%84%CE%BF%CF%82 */
 
-	if (year%100 == 0){
-		if (year % 400 == 0)
-			return true;
-		else
-			return false;
-	}
-	else
-	{
-		if (year % 4 == 0)
-			return true;
-		else
-			return false;
-	}
-
-
+	return ((year % 4 == 0) && (year % 100 != 0)) || ((year % 400 == 0));
 }
+	
+	
+
+
 
 
 
@@ -120,11 +105,11 @@ void date::nextDate(){
 		cout << day + 1 << "/" << month << "/" << year << endl;
 	}
 	if (isLeap() == false && month == 2 && day == 28){
-		cout <<  1 << "/" << month+1 << "/" << year << endl;
+		cout << 1 << "/" << month + 1 << "/" << year << endl;
 
 	}
-	
-	
+
+
 }
 
 
@@ -133,4 +118,3 @@ date::~date()
 {
 
 }
-
