@@ -13,7 +13,7 @@ private:
 	int day, month, year;
 public:
 	date();
-	void initDate(int d, int m, int y);
+	void initDate();
 	bool setDay(int d);
 	bool setMonth(int m);
 	bool setYear(int y);

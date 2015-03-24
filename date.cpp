@@ -21,16 +21,18 @@ date::date()
 
 
 
-void date::initDate(int d, int m, int y)
+void date::initDate()
 {
-
+	
+	cout << "Δώσε την ημέρα : "; cin >> day ;
 	if ( !setDay(day) ) 
 		day = 1;
 
-
+	cout << "Δώσε τon μήνα : "; cin >> month ;
 	if ( !setMonth(month) ) 
 		month = 1;
 
+	cout << "Δώσε την χρονιά : "; cin >> year ;
 	if ( !setYear(year) ) 
 		year = 1;
 } 
