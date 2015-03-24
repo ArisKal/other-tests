@@ -19,9 +19,7 @@ int main()
 		
 		
 	d2.initDate();
-	d2.setMonth(m);
-	d2.setYear(y);
-		
+
 	cout << boolalpha << d2.isLeap() << endl;
 		
 	d2.printDate();
