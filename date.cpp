@@ -132,43 +132,53 @@ void date::nextDate()
 	day++; /* Απλά αυξάνω την ημέρα αρχικά ( άσχετα με τον χαμό που θα δω παρακάτω πως μπορεί να προκαλέσει αυτό. */
 	
 	/* Οι μήνες με 31 ημέρες. */
-	if ( ( day == 31 ) && ( (month == 1 ) || (month == 3) || (month == 5) || (month == 7) || (month == 8) || (month == 10) || (month == 12) ) )
+	if ( ( day == 32 ) && ( (month == 1 ) || (month == 3) || (month == 5) || (month == 7) || (month == 8) || (month == 10) || (month == 12) ) )
 		{
 		day = 1;
 		month++;
 		
-		if ( month == 12 ) /* Αν μήνας γίνει ο τελευταίος.*/
+		if ( month == 13 ) /* Αν μήνας γίνει ο τελευταίος.*/
+			{
+			day = 1;
+			month = 1;
 			year++;
+			}
 		}
 
 
 	/* Οι μήνες με 30 ημέρες. */
-	else if ( ( day == 30 ) && ( (month == 2 ) || (month == 4) || (month == 6) || (month == 9) || (month == 11) ) )
+	else if ( ( day == 31 ) && ( (month == 2 ) || (month == 4) || (month == 6) || (month == 9) || (month == 11) ) )
 		{
-		day 1;
+		day = 1;
 		month++;
 		
-		if ( month == 12 ) /* Αν μήνας γίνει ο τελευταίος.*/
+		if ( month == 13 ) /* Αν μήνας γίνει ο τελευταίος.*/
+			{
+			day = 1;
+			month = 1;
 			year++;
+			}
 		}
 
 
 	
 	/* Υπάρχει όμως και οι special περίπτωση του ΚΟΥΤΣΟΥ του Φλεβάρη. */	
 	
-	if ( ( isLeap() ) && ( month == 2 ) && ( day == 29 ) )
+	if ( ( isLeap() ) && ( month == 2 ) && ( day == 30 ) ) /* Έχει μέχρι 29 ημέρες. */
 		{
 		day = 1;
 		month++;
 		}
 
 
-	else if ( ( !isLeap() ) && ( month == 2 ) && ( day == 28 ) )
+	else if ( ( !isLeap() ) && ( month == 2 ) && ( day == 29 ) ) /* Έχει μέχρι 28 ημέρες. */
 		{
 		day = 1;
 		month++;
 		}
-	
+		
+
+
 	
 	}
 
