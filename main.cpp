@@ -12,18 +12,27 @@ int main()
 	d1.isLeap();
 		
 		
-	cout <<boolalpha<<d1.isLeap() <<endl;
-		
-	d1.printDate();
+	cout << boolalpha << d1.isLeap() <<endl;
+
 	d1.nextDate();
+	cout << "Αύξηση μίας ημέρας : " ;
+
+
+	d1.printDate();
+	
+
 		
 		
 	d2.initDate();
 
 	cout << boolalpha << d2.isLeap() << endl;
-		
-	d2.printDate();
+
 	d2.nextDate();
+	cout << "Αύξηση μίας ημέρας : " ;
+	
+	
+	d2.printDate();
+
 	
 	return 0;
 }
