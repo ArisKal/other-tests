@@ -23,7 +23,7 @@ bool	Circle::pointIn(double x,double y)
 (x - x0)2 + ( y - y0 )2 <= R2
 
 */
-	return ( ( pow((x - x0),2) + pow(( y - y0 ),2) ) <= radious );
+	return ( ( pow((x - x0),2) + pow(( y - y0 ),2) ) <= (pow(radious,2)) );
 
 }
 
