@@ -16,7 +16,15 @@ void	Circle::scale(double factor)
 
 bool	Circle::pointIn(double x,double y)
 {
-	//to be implemented
+/*
+αν έχουμε σημεία (x,y) για να δούμε αν είναι μέσα στον κύκλο με κέντρο (x0, y0) και
+ακτίνα R αν ισχύει η σχέση :
+
+(x - x0)2 + ( y - y0 )2 <= R2
+
+*/
+	return ( ( pow((x - x0),2) + pow(( y - y0 ),2) ) <= radious );
+
 }
 
 double	Circle::getArea()
