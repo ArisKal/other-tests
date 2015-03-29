@@ -5,9 +5,28 @@ using namespace std;
 Date::Date()
 {
 	fillTable();
-	day=1;
-	month=1;
-	year=1;
+
+	cout << "Ημέρα : " ;	cin >> day;
+
+	while ( !setDay(day) ) /* Όσο η setYear(year) δεν επιστρέφει αληθής ( ότι έδωσε σωστή χρονιά ). */
+	{
+		cout << "Λάνθασμένη εισαγωγή ημέρας. Ξανά προσπάθησε." << endl << "Ημέρα : ";	cin >> day;
+	}
+
+
+	cout << "Μήνας : " ;	cin >> month;
+
+	while ( !setMonth(month) ) /* Όσο η setYear(year) δεν επιστρέφει αληθής ( ότι έδωσε σωστή χρονιά ). */
+	{
+		cout << "Λάνθασμένη εισαγωγή μήνα. Ξανά προσπάθησε." << endl << "Μήνας : ";		cin >> month;
+	}
+
+
+	cout << "Χρονιά : ";	cin >> year;
+	while ( !setYear(year) ) /* Όσο η setYear(year) δεν επιστρέφει αληθής ( ότι έδωσε σωστή χρονιά ). */
+	{
+		cout << "Λάνθασμένη εισαγωγή χρονιάς. Ξανά προσπάθησε." << endl << "Χρονιά : ";	cin >> year;
+	}
 }
 
 
