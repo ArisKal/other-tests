@@ -3,12 +3,12 @@
 
 class Date {
 
-
 private:
 
 		int monthdays[12];
 		void fillTable();
 		int day,month,year;
+
 
 
 public:
@@ -31,9 +31,14 @@ public:
 	//utility methods
 	bool	sameDate(Date &other);
 	void	nextDay();
+
+	void privDay();
+	int before(Date &other);
+	bool isLeap();
+
+
 	void	printDate();
 	virtual ~Date();
-
 
 
 };
