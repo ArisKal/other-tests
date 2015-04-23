@@ -118,6 +118,11 @@ bool Date::setDay(int d)
 		day=1;return false;
 		}
 
+	else if ( (isLeap() == true) && (d == 29) && (monthdays[month-1] == 2)  )
+	{ // Αν ΕΊΝΑΙ δίσεκτο το έτος ΚΑΙ αν έχει δώσει 29 ΚΑΙ αν είναι ο δεύτερος μήνας...
+		day=d;
+	}
+	
 	else
 	{
 		day=d;
